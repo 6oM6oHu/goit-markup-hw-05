@@ -18,6 +18,11 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="./styles.css/style.css" />
   </head>
   <body class="page">
@@ -31,7 +36,7 @@
           <li class="site-nav-item">
             <a
               href=""
-              class="site-nav-link link active-link"
+              class="site-nav-link link current"
               rel="noreferrer noopener"
               >Студія</a
             >
@@ -69,8 +74,12 @@
     <main>
       <section class="hero">
         <div class="container">
-          <h1 class="hero-title">Ефективні рішення для вашого бізнесу</h1>
-          <button type="button" class="hero-button">Замовити послугу</button>
+          <h1 class="hero-title" data-aos="zoom-out-up">
+            Ефективні рішення для вашого бізнесу
+          </h1>
+          <button type="button" class="hero-button" data-modal-open>
+            Замовити послугу
+          </button>
         </div>
       </section>
       <!-- Переваги -->
@@ -134,28 +143,37 @@
           <h2 class="section-title">Чим ми займаємося</h2>
           <ul class="process-list list">
             <li class="process-item">
-              <img
-                src="./images/box1.jpg"
-                alt="Робота на персональному компьютері"
-                width="370"
-                height="294"
-              />
+              <div class="process-overlay">
+                <img
+                  src="./images/box1.jpg"
+                  alt="Робота на персональному компьютері"
+                  width="370"
+                  height="294"
+                />
+                <p class="process-text-overlay">Десктопні додатки</p>
+              </div>
             </li>
             <li class="process-item">
-              <img
-                src="./images/box2.jpg"
-                alt="Розробка  дизайна на макбуці"
-                width="370"
-                height="294"
-              />
+              <div class="process-overlay">
+                <img
+                  src="./images/box2.jpg"
+                  alt="Розробка  дизайна на макбуці"
+                  width="370"
+                  height="294"
+                />
+                <p class="process-text-overlay">Мобільні додатки</p>
+              </div>
             </li>
             <li class="process-item">
-              <img
-                src="./images/box3.jpg"
-                alt="Планшет з інфографікой"
-                width="370"
-                height="294"
-              />
+              <div class="process-overlay">
+                <img
+                  src="./images/box3.jpg"
+                  alt="Планшет з інфографікой"
+                  width="370"
+                  height="294"
+                />
+                <p class="process-text-overlay">Дизайнерські рішення</p>
+              </div>
             </li>
           </ul>
         </div>
@@ -482,5 +500,19 @@
         </div>
       </div>
     </footer>
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button type="button" class="close-modal-btn" data-modal-close>
+          <svg class="icon-close" width="18px" height="18px">
+            <use href="./images/social-icon.svg#icon-close"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <script src="./js/modal.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
