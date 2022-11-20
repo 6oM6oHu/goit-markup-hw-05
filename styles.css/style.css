@@ -22,14 +22,8 @@
   --social-icon-color: #afb1b8;
 
   /* CSs animation speed */
-  --nav-link-transit: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  --all-overlay-transform: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  --social-transit: fill, color,
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  --clients-transit: color, border 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  --portfolio-btn-transit: box-shadow, color,
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  --portfolio-card-transit: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transit: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --portfolio-card-transit: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -123,7 +117,8 @@ button {
 /*! ------------------HEADER----------------------  */
 
 .header {
-  height: 80px;
+  min-height: 80px;
+  width: 100%;
   border-bottom: 1px solid #ececec;
   background-color: var(--white-bg-color);
 }
@@ -224,7 +219,7 @@ button {
 
 .site-nav-link,
 .contact-link {
-  transition: var(--nav-link-transit);
+  transition: color var(--transit);
 }
 
 /*! ------------------HERO----------------------*/
@@ -331,11 +326,11 @@ button {
 }
 .process-item {
 }
-.process-overlay {
+.process-wrap {
   position: relative;
   overflow: hidden;
 }
-.process-text-overlay {
+.process-text {
   width: 100%;
   position: absolute;
   bottom: 0;
@@ -351,13 +346,6 @@ button {
   font-weight: 700;
   line-height: 1.2;
   text-transform: uppercase;
-
-  transform: translateY(100%);
-  transition: var(--all-overlay-transform);
-}
-
-.process-item:hover .process-text-overlay {
-  transform: translateY(0);
 }
 
 /* !-------------------Team---------------- */
@@ -377,7 +365,7 @@ button {
   width: calc((100% - 90px) / 4);
 
   background-color: var(--white-bg-color);
-  transition: var(--portfolio-card-transit);
+  transition: box-shadow var(--transit);
 }
 
 .team-item:hover {
@@ -435,13 +423,13 @@ button {
 
   background-color: #ffffff;
   border-radius: 50px;
-  transition: var(--social-transit);
+  transition: background-color var(--transit);
 }
 .social-team-icon {
   width: 20px;
   height: 20px;
   fill: #afb1b8;
-  transition: var(--social-transit);
+  transition: fill var(--transit);
 }
 .social-team-link:hover,
 .social-team-link:focus {
@@ -477,7 +465,7 @@ button {
   color: #afb1b8;
   border: 1px solid #afb1b8;
   border-radius: 4px;
-  transition: var(--clients-transit);
+  transition: color var(--transit), border var(--transit);
 }
 
 .clients-icon {
@@ -580,7 +568,8 @@ button {
   color: var(--secondary-text-color);
   background-color: var(--button-bg-color);
 
-  transition: var(--portfolio-btn-transit);
+  transition: box-shadow var(--transit), color var(--transit),
+    background-color var(--transit);
 }
 
 .radio-button:first-child {
@@ -612,7 +601,7 @@ button {
 }
 
 .projects-link {
-  transition: var(--portfolio-card-transit);
+  transition: box-shadow var(--transit);
 }
 
 .projects-overlay {
@@ -638,7 +627,7 @@ button {
   line-height: 1.55;
 
   transform: translateY(100%);
-  transition: var(--all-overlay-transform);
+  transition: transform var(--transit);
   overflow: auto;
 }
 
