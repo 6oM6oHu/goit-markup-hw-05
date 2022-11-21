@@ -503,7 +503,7 @@ button {
 .footer {
   padding-top: 60px;
   padding-bottom: 60px;
-  /* max-width: 1600px; */
+  margin: 0 auto;
   background-color: var(--footer-bg-color);
 }
 
